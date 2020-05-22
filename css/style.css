@@ -1,0 +1,747 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Cabin|Herr+Von+Muellerhoff|Source+Sans+Pro:400,900&display=swap');
+
+:root{
+  --main-font: 'Noto Sans JP', sans-serif;
+  --body-font: 'Cabin', sans-serif;
+  --main-color: rgb(253, 143, 0);
+  --navi-font:"游明朝",YuMincho, sans-serif;
+}
+
+/* --------------------------------
+ * base
+ * -------------------------------- */
+body{ 
+  margin: 0;
+  color: #111111;
+  font-family: var(--main-font);
+}
+
+ul{
+  padding-left: 0;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: #111111;
+}
+
+h2{
+  text-align: center;
+  border-bottom: 2px solid rgb(255, 179, 58);
+  display: block;
+  font-size: 40px;
+  font-weight: 800;
+  font-family: var(--secondary-font);
+  font-style: italic;
+}
+
+h2 span{
+  font-size: 18px;
+  display: block;
+  line-height: 1rem;
+  padding-bottom: 5px;
+}
+
+h4{
+  margin: 0;
+}
+
+.clearfix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* --------------------------------
+ * header
+ * -------------------------------- */
+.top-navi{
+  height: 65px;
+}
+
+.top-navi__logo{
+  display: inline-block;
+  font-size: 40px;
+  padding-left: 50px;
+  font-weight: 600;
+  line-height: 5rem;
+}
+
+.top-navi__tell{
+  float: right;
+  line-height: 5rem;
+  padding-right: 20px;
+  display: block;
+}
+
+.menu{
+  font-family: var(--navi-font);
+}
+
+@media screen and (max-width:768px) {
+  .top-navi__tell{
+    float: right;
+    line-height: 5rem;
+    padding-right: 20px;
+    display: none;
+  }
+
+	#wrapper nav{
+		position: fixed;
+		top: 0;
+		right: -320px;
+		width: 320px;
+    height: 100%;
+    opacity: 0.8;
+		padding-top: 50px;
+		background:#333;
+		font-size: 16px;
+		box-sizing: border-box;
+		z-index: 2;
+  }
+  
+	#wrapper nav ul {
+		display:block;
+    padding: 0;
+    text-align: center;
+  }
+  
+  #g-navi span{
+		display: block;
+		justify-content: center;
+		padding: 0;
+	}
+	
+	#wrapper nav ul li{
+		display:block;
+		padding: 20px 0;
+		width: 100%;
+  }
+  
+	#wrapper nav ul li:nth-child(1){
+		padding-top: 0;
+	}
+	
+	#wrapper nav ul li a{
+		text-decoration: none;
+		color: #ddd;
+	}
+	
+	#wrapper .btn-gnavi{
+		position: absolute;
+		top: 10px;
+		right: 20px;
+		width: 30px;
+		height: 24px;
+		z-index: 3;
+		box-sizing: border-box;
+		cursor: pointer;
+		transition: all 0.4s;
+	}
+	
+	#wrapper .btn-gnavi span{
+		position: absolute;
+		width: 30px;
+		height: 4px;
+		background: #666;
+		border-radius: 10px;
+		transition: all 0.2s;
+	}
+	
+	#wrapper .btn-gnavi span:nth-child(1){
+		top: 0;
+	}
+	
+	#wrapper .btn-gnavi span:nth-child(2){
+		top: 10px;
+	}
+	
+	#wrapper .btn-gnavi span:nth-child(3){
+		top: 20px;
+  }
+  
+	#wrapper .btn-gnavi.open span:nth-child(1){
+		transform: translateY(5px) rotate(-45deg);
+	}
+	
+	#wrapper .btn-gnavi.open span:nth-child(2){
+		transform: translateY(-5px) rotate(45deg);
+	}
+	
+	#wrapper .btn-gnavi.open span:nth-child(3){
+		opacity: 0;
+	}
+	
+	#wrapper .btn-gnavi.open span{
+		background: #fff;
+	}
+	
+	#wrapper .contents section p{
+		position: absolute;
+		top: 50%;
+		width: 30%;
+		line-height: 1.4;
+		font-size: 20px;
+		color: #fff;
+		text-shadow: 0 0 6px #666
+	}
+	
+	#wrapper .contents section:nth-child(odd) p{
+		left: 10%;
+	}
+	
+	#wrapper .contents section:nth-child(even) p{
+		right: 10%;
+  }
+}
+
+/* ==== PC版==== */
+@media (min-width: 768px){
+  /* --------------------------------
+ * header
+ * -------------------------------- */
+  #g-navi span{
+    color: #000000;
+  }
+
+	#wrapper nav ul li{
+		display:inline-block;
+		font-size: 16px;
+    height: 100%;
+  }
+  
+  #wrapper nav ul li a{
+    color: #ddd;
+    padding: 0 20px;
+    width: 100%;
+    height: 100%;
+  }
+  
+	#g-navi ul{
+		display: flex;
+		justify-content: center;
+    padding: 0 10px;
+    margin: 0;
+  }
+  
+	#g-navi li{
+		width: calc(100% / 6);
+		text-align: center;
+		font-family: var(--navi-font);
+  }
+  
+	#g-navi .en,
+	#g-navi .ja{
+		display: block;
+	} 
+	
+	#g-navi .en{
+		font-size: 18px;
+  } 
+  
+	#g-navi .ja{
+		font-size: 14px;
+	} 
+	
+	header{
+    width: 100%;
+    height: 80px;
+	}
+}
+
+/* --------------------------------
+ * main-visual
+ * -------------------------------- */
+#main-visual{
+  background-image: url(../img/topImage.jpg);
+  background-size: cover;
+  background-position: center;
+  width: cover;
+  height: 650px;
+}
+ 
+/* --------------------------------
+ * Event
+ * -------------------------------- */
+ #event{
+  margin: 50px 20px;
+}
+
+.seminar{
+  padding-right: 10px;
+}
+
+.seminar h3,
+.tour h3{
+  border-bottom: 1.5px solid rgb(46, 215, 186);
+  display: inline-block;
+  margin-bottom: 0;
+  font-size: 24px;
+  text-align: center;
+}
+
+.seminar a,
+.tour a{
+  padding-top: 20px;
+  display: block;
+}
+
+.seminar ul,
+.tour ul{
+  margin: 0;
+}
+
+.seminar li,
+.tour li{
+  border-bottom: 1px solid rgb(55, 179, 58, 1);
+}
+
+.seminar__right,
+.tour__right{
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.seminar__right img,
+.tour__right img{
+  width: 100%;
+  text-align: center;
+}
+
+.event__mark,
+.event__mark__finished{
+  display: inline-block;
+  background-color: rgb(46, 215, 186);
+  color: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 5px;
+  text-align: center;
+}
+
+.event__heading{
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.event__mark__finished{
+  background-color: rgb(219, 160, 130);
+  width: 80%;
+}
+
+.event__data{
+  margin: 0 0 10px 10px;
+}
+
+.event__data span{
+  color: #000000;
+  font-size: 14px;
+}
+
+.btn-more a{
+  display: inline-block;
+  padding: 5px 40px;
+  color: #111111;
+  bottom: 0 auto;
+  border: 2px solid #111111;
+  border-radius: 10px;
+}
+
+.btn-more{
+  text-align: center;
+}
+
+.btn-more a:hover{
+  background: var(--main-color);
+  color: #fff;
+  border: 2px solid var(--main-color);
+}
+
+/* --------------------------------
+ * Work
+ * -------------------------------- */
+ #works{
+   background: #f5f5f5;
+}
+
+.works__container{
+  margin: 50px 20px;
+  padding: 20px 0 50px 0;
+}
+
+.works-box{
+  width: 100%;
+  border: 1px solid #ffffff;
+  border-bottom: 2px solid rgb(46, 215, 186);
+  border-radius: 1px;
+  text-align: center;
+  background-color: #ffffff;
+  margin-bottom: 30px;
+  box-shadow: 0 0 2px #000000;
+  box-sizing: border-box;
+}
+
+.works-box__text{
+  padding: 0 20px;
+}
+
+.works-box__thumb{
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.works-box__thumb{
+  position: relative;
+  margin: 0 auto;
+}
+
+.works-box__thumb img{
+  width: 100%;
+}
+
+/* --------------------------------
+ * Staff
+ * -------------------------------- */
+ #staff{
+  margin: 50px 20px;
+}
+
+.staff__list li{
+  width: 50%;
+  float: left;
+}
+
+.staff__list img{
+  width: 100%;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* --------------------------------
+ * Contact
+ * -------------------------------- */
+#contact{
+  margin: 50px 20px;
+  padding: 50px 0 0 0;
+  text-align: center;
+}
+
+.contact__box{
+  margin: 50px 0;
+}
+
+.btn__contact a{
+  display: inline-block;
+  padding: 5px 40px;
+  color: #111111;
+  bottom: 0 auto;
+  border: 2px solid #111111;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+.btn__contact a:hover{
+  background: var(--main-color);
+  color: #fff;
+  border: 2px solid var(--main-color);
+}
+
+.btn__contact{
+  text-align: center;
+}
+
+/* --------------------------------
+ * follow__Contact
+ * -------------------------------- */
+.follow__contact ul{
+  display: flex;
+}
+
+.follow__contact li{
+  width: 50%;
+  background: var(--main-color);
+  border: 1px solid #ffffff;
+  text-align: center;
+  display: inline-block;
+}
+
+.follow__contact a{
+  display: flex;
+  height: 80px;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 600;
+  display: inline-block;
+  position: relative;
+}
+
+.contact__icon{
+  width: 15%;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.follow__contact span{
+  font-size: 164x;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.event__book{
+  line-height: 3rem;
+}
+
+.back-to-top{
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 20px;
+  bottom: 150px;
+  background: var(--main-color);
+  opacity: 0.8;
+  border-radius: 50%;
+  z-index: 100;
+}
+
+.back-to-top a{
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.back-to-top a::before{
+  font-family: "Font Awesome 5 Free";
+  content: '\f106';
+  font-weight: 900;
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 8px;
+  left: 6px;
+  margin: auto;
+}
+
+/* --------------------------------
+ * footer
+ * -------------------------------- */
+footer{
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+}
+
+/* --------------------------------
+* メディアクエリ
+* -------------------------------- */
+
+/* ==== PC版==== */
+@media (min-width: 768px){
+  /* --------------------------------
+  * Event
+  * -------------------------------- */
+  #event{
+    margin: 50px 80px;
+  }
+
+  .event-information{
+    display: flex;
+  }
+
+  .event__content{
+    display: flex;
+  }
+  
+  .seminar{
+    padding-right: 20px;
+    padding-left: 10px;
+    width: 50%;
+  }
+
+  .tour{
+    padding-right: 10px;
+    padding-left: 20px;
+    width: 50%;
+  }
+
+  .seminar__left,
+  .tour__left{
+    width: 50%;
+  }
+
+  /* --------------------------------
+  * Works
+  * -------------------------------- */
+  .works__container{
+    margin: 80px 80px;
+  }
+
+  .works__contents{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .works__contents__left,
+  .works__contents__right{
+    width: 46%;
+    padding: 20px;
+  }
+
+  /* --------------------------------
+  * Staff
+  * -------------------------------- */
+  #staff{
+    margin: 50px 80px;
+  }
+
+  .staff__list ul{
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .staff__list li{
+    width: calc( 100% / 5 );
+  }
+
+  .staff__list img{
+    width: 100%;
+  }
+
+  /* --------------------------------
+  * Contact
+  * -------------------------------- */
+  #contact{
+    margin: 100px 80px;
+  }
+  
+  /* --------------------------------
+  * follow__Contact
+  * -------------------------------- */
+  .follow__contact{
+    position: fixed;
+    top: 30%;
+    right: 0%;
+  }
+
+  .follow__contact ul{
+    display: block;
+    width: 90px;
+    height: 90px;
+  }
+
+  .follow__contact li{
+    background-color: var(--main-color);
+    border: 1px solid #ffffff;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    height: 90px;
+  }
+
+  .follow__contact a{
+    display: inline-block;
+    padding: 10px 0;
+    width: 80%;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  .follow_contact_list span,
+  .follow_contact_event span{
+    font-size: 12px;
+    line-height: 1;
+    width: 100%;
+    top: 70%;
+  }
+
+  .contact__icon{
+    width: auto;
+    margin: 0 auto;
+    margin-top: 10px;
+    top: 30%;
+  }
+
+  .event__book{
+    font-size: 12px;
+    line-height: 5rem;
+    display: inline-block;
+    margin: 0;
+  }
+}
+
+/* ==== PC版 (大) ==== */
+@media (min-width: 1025px){
+  /* --------------------------------
+  * header
+  * -------------------------------- */
+  #g-navi .en{
+    font-size: 24px;
+  } 
+
+  #g-navi .ja{
+    font-size: 20px;
+  } 
+
+  /* --------------------------------
+  * Event
+  * -------------------------------- */
+  #event{
+    margin: 50px 80px;
+  }
+
+  .event__data span{
+    font-size: 16px;
+  }
+
+  /* --------------------------------
+  * Work
+  * -------------------------------- */
+  #works{
+    background: #f5f5f5;
+  }
+
+  .works__container{
+    margin: 100px 80px;
+  }
+
+  /* --------------------------------
+  * Staff
+  * -------------------------------- */
+  #staff{
+    margin: 50px 80px;
+  }
+
+  /* --------------------------------
+  * Contact
+  * -------------------------------- */
+  #contact{
+    margin: 50px 80px;
+  }
+}
+  /* ==== PC版 (大) ここまで==== */
