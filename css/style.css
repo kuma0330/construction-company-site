@@ -416,9 +416,10 @@ h4{
   margin: 50px 20px;
 }
 
-.staff__list li{
-  width: 50%;
+.staff__list > div{
+  width: calc(100% /3);
   float: left;
+  text-align: center;
 }
 
 .staff__list img{
@@ -620,13 +621,8 @@ footer{
     margin: 50px 80px;
   }
 
-  .staff__list ul{
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  .staff__list li{
-    width: calc( 100% / 5 );
+  .staff__list > div{
+    width: calc(100% /4);
   }
 
   .staff__list img{
@@ -735,6 +731,10 @@ footer{
   * -------------------------------- */
   #staff{
     margin: 50px 80px;
+  }
+
+  .staff__list > div{
+    width: calc(100% /5);
   }
 
   /* --------------------------------
